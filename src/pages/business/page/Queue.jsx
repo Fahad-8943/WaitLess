@@ -58,7 +58,7 @@ function Queue() {
     token: "A-104",
     selectedServices: "Haircut, Beard Trim & Hot Towel Finish",
     estimatedDuration: "45 min",
-    bookingInformation: "Walk-in Queue Token &bull; Token generated at 10:12 AM &bull; Checked in station at 10:28 AM",
+    bookingInformation: "Walk-in Queue Token • Token generated at 10:12 AM • Checked in station at 10:28 AM",
   };
 
   return (
@@ -70,14 +70,14 @@ function Queue() {
           {/* 1. Queue Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#2563EB]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2563EB]">
                 Live Operations
               </span>
               <h1 className="text-xl sm:text-2xl font-extrabold text-[#111827]">
                 Queue Management Desk
               </h1>
               <p className="text-xs text-[#64748B] mt-0.5">
-                {queueHeader.businessName} &bull; {queueHeader.date}
+                {queueHeader.businessName} • {queueHeader.date}
               </p>
             </div>
 
@@ -96,7 +96,7 @@ function Queue() {
                 key={stat.label}
                 className="bg-white p-3.5 rounded-xl border border-[#E2E8F0] shadow-2xs text-center"
               >
-                <span className="text-[11px] font-semibold text-[#64748B] block">
+                <span className="text-xs font-semibold text-[#64748B] block">
                   {stat.label}
                 </span>
                 <strong className="text-2xl font-black text-[#111827] mt-0.5 block">
@@ -113,7 +113,7 @@ function Queue() {
               {/* 2. Currently Serving Block */}
               <div className="bg-white p-6 rounded-xl border-2 border-[#2563EB] shadow-2xs space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#2563EB]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#2563EB]">
                     CURRENTLY SERVING AT {currentlyServing.station}
                   </span>
                   <span className="text-xs text-[#64748B]">
@@ -148,21 +148,21 @@ function Queue() {
                 <div className="grid grid-cols-3 gap-3 pt-2">
                   <button
                     type="button"
-                    className="py-2.5 px-3 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold text-xs rounded-lg transition-colors shadow-2xs text-center"
+                    className="min-h-[44px] flex items-center justify-center py-2.5 px-3 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold text-xs rounded-lg transition-colors shadow-2xs text-center"
                   >
                     Call Next Token
                   </button>
 
                   <button
                     type="button"
-                    className="py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-lg transition-colors shadow-2xs text-center"
+                    className="min-h-[44px] flex items-center justify-center py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-lg transition-colors shadow-2xs text-center"
                   >
                     Complete Service
                   </button>
 
                   <button
                     type="button"
-                    className="py-2.5 px-3 bg-white hover:bg-slate-50 border border-[#E2E8F0] text-[#111827] font-semibold text-xs rounded-lg transition-colors text-center"
+                    className="min-h-[44px] flex items-center justify-center py-2.5 px-3 bg-white hover:bg-slate-50 border border-[#E2E8F0] text-[#111827] font-semibold text-xs rounded-lg transition-colors text-center"
                   >
                     Skip Customer
                   </button>
@@ -175,7 +175,7 @@ function Queue() {
                   <h2 className="text-xs font-bold text-[#64748B] uppercase tracking-wider">
                     Grace Period Protocol
                   </h2>
-                  <span className="text-[11px] text-[#64748B]">
+                  <span className="text-xs text-[#64748B]">
                     Active window: 10 minutes
                   </span>
                 </div>
@@ -192,7 +192,7 @@ function Queue() {
                           : "bg-[#F8FAFC] border-slate-200 text-[#64748B] opacity-60"
                       }`}
                     >
-                      <span className="text-[10px] uppercase font-bold block">
+                      <span className="text-xs uppercase font-bold block">
                         Phase {idx + 1}
                       </span>
                       <strong className="block mt-1">
@@ -226,14 +226,14 @@ function Queue() {
                           <strong className="text-[#111827] block">
                             {cust.customer}
                           </strong>
-                          <span className="text-[#64748B] text-[11px] block">
-                            {cust.service} &bull; Est. {cust.duration}
+                          <span className="text-[#64748B] text-xs block">
+                            {cust.service} • Est. {cust.duration}
                           </span>
                         </div>
                       </div>
 
                       <div>
-                        <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-[#64748B] border border-slate-200">
+                        <span className="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-[#64748B] border border-slate-200">
                           {cust.status}
                         </span>
                       </div>
@@ -247,7 +247,7 @@ function Queue() {
             <div className="lg:col-span-4 sticky top-24">
               <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-2xs p-5 space-y-4">
                 <div className="pb-3 border-b border-[#E2E8F0]">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#3730A3]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#3730A3]">
                     Customer Dossier
                   </span>
                   <h2 className="text-sm font-bold text-[#111827] mt-0.5">
@@ -286,7 +286,7 @@ function Queue() {
 
                   <div className="pt-2 border-t border-[#E2E8F0]">
                     <span className="text-[#64748B] block">Booking Information</span>
-                    <p className="text-[11px] text-[#64748B] mt-1 leading-relaxed">
+                    <p className="text-xs text-[#64748B] mt-1 leading-relaxed">
                       {customerPanel.bookingInformation}
                     </p>
                   </div>

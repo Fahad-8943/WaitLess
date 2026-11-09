@@ -88,9 +88,9 @@ function History() {
                       {item.business}
                     </strong>
                     <p className="text-[#64748B]">
-                      {item.service} &bull; Duration: {item.duration}
+                      {item.service} • Duration: {item.duration}
                     </p>
-                    <div className="text-[11px] text-[#64748B]">
+                    <div className="text-xs text-[#64748B]">
                       {item.date} at {item.time}
                     </div>
                   </div>
@@ -99,7 +99,7 @@ function History() {
                     <strong className="text-sm text-[#111827]">
                       {item.amount}
                     </strong>
-                    <span className="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span className="px-2.5 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                       {item.status}
                     </span>
                   </div>

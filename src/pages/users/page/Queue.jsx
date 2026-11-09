@@ -32,7 +32,7 @@ function Queue() {
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#2563EB]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2563EB]">
                 Live Queue Tracker
               </span>
               <h1 className="text-xl sm:text-2xl font-extrabold text-[#111827]">
@@ -55,46 +55,46 @@ function Queue() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {/* YOUR TOKEN */}
             <div className="bg-[#EFF6FF] border-2 border-[#2563EB] rounded-xl p-4 text-center">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#2563EB] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2563EB] block">
                 Your Token
               </span>
               <strong className="text-3xl sm:text-4xl font-black text-[#2563EB] mt-1 block">
                 #{queueData.yourToken}
               </strong>
-              <span className="text-[11px] font-medium text-[#2563EB]">Assigned</span>
+              <span className="text-xs font-medium text-[#2563EB]">Assigned</span>
             </div>
 
             {/* CURRENT TOKEN */}
             <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 text-center">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#64748B] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
                 Current Token
               </span>
               <strong className="text-3xl sm:text-4xl font-black text-[#111827] mt-1 block">
                 #{queueData.currentToken}
               </strong>
-              <span className="text-[11px] text-[#64748B]">Serving now</span>
+              <span className="text-xs text-[#64748B]">Serving now</span>
             </div>
 
             {/* PEOPLE AHEAD */}
             <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 text-center">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#64748B] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
                 People Ahead
               </span>
               <strong className="text-3xl sm:text-4xl font-black text-[#111827] mt-1 block">
                 {queueData.peopleAhead}
               </strong>
-              <span className="text-[11px] text-[#64748B]">In queue</span>
+              <span className="text-xs text-[#64748B]">In queue</span>
             </div>
 
             {/* ESTIMATED WAITING TIME */}
             <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 text-center">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#64748B] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
                 Estimated Wait
               </span>
               <strong className="text-2xl sm:text-3xl font-black text-[#0891B2] mt-2 block">
                 {queueData.estimatedWaitingTime}
               </strong>
-              <span className="text-[11px] text-[#64748B]">Approximate</span>
+              <span className="text-xs text-[#64748B]">Approximate</span>
             </div>
           </div>
 
@@ -128,7 +128,7 @@ function Queue() {
               <h2 className="text-xs font-bold text-[#64748B] uppercase tracking-wider">
                 No-Show Grace Period Protocol
               </h2>
-              <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+              <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
                 10-Minute Policy
               </span>
             </div>
@@ -139,13 +139,13 @@ function Queue() {
                   key={stage.name}
                   className="p-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-xs"
                 >
-                  <span className="text-[10px] font-bold text-[#3730A3] block">
+                  <span className="text-xs font-bold text-[#3730A3] block">
                     Phase {idx + 1}
                   </span>
                   <strong className="text-xs font-bold text-[#111827] mt-0.5 block">
                     {stage.name}
                   </strong>
-                  <span className="text-[11px] text-[#64748B] mt-1 block leading-normal">
+                  <span className="text-xs text-[#64748B] mt-1 block leading-normal">
                     {stage.desc}
                   </span>
                 </div>
@@ -157,11 +157,11 @@ function Queue() {
           <div className="pt-2 text-center">
             <button
               type="button"
-              className="px-5 py-2.5 border border-red-200 text-red-600 hover:bg-red-50 font-semibold rounded-lg text-xs transition-colors"
+              className="min-h-[44px] px-5 py-2.5 border border-red-200 text-red-600 hover:bg-red-50 font-semibold rounded-lg text-xs transition-colors inline-flex items-center justify-center"
             >
               Cancel Queue Token
             </button>
-            <p className="text-[11px] text-[#64748B] mt-1.5">
+            <p className="text-xs text-[#64748B] mt-1.5">
               Releases your token so next in line can be served.
             </p>
           </div>

@@ -111,13 +111,13 @@ function Users() {
                     <strong className="text-sm font-bold text-[#111827]">
                       {user.name}
                     </strong>
-                    <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span className="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                       {user.status}
                     </span>
                   </div>
-                  <div className="text-[11px] text-[#64748B] space-y-0.5">
+                  <div className="text-xs text-[#64748B] space-y-0.5">
                     <div>Email: <span className="text-[#111827]">{user.email}</span></div>
-                    <div>Phone: {user.phone} &bull; Registered: {user.registrationDate}</div>
+                    <div>Phone: {user.phone} • Registered: {user.registrationDate}</div>
                   </div>
                 </div>
               ))}

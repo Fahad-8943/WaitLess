@@ -213,11 +213,11 @@ function Discover() {
                       {biz.name.slice(0, 2).toUpperCase()}
                     </div>
 
-                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-[11px] font-semibold bg-white text-[#3730A3] border border-[#E2E8F0]">
+                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-xs font-semibold bg-white text-[#3730A3] border border-[#E2E8F0]">
                       {biz.category}
                     </span>
 
-                    <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                       {biz.status}
                     </span>
                   </div>
@@ -236,7 +236,7 @@ function Discover() {
                         ★ {biz.rating}
                       </span>
                       <span>({biz.reviewCount} reviews)</span>
-                      <span>&bull;</span>
+                      <span>•</span>
                       <span>{biz.distance || "Distance unavailable"}</span>
                     </div>
 
@@ -250,7 +250,7 @@ function Discover() {
                       {biz.services.map((svc) => (
                         <span
                           key={svc}
-                          className="px-2 py-0.5 rounded text-[11px] bg-[#F8FAFC] border border-[#E2E8F0] text-[#64748B]"
+                          className="px-2 py-0.5 rounded text-xs bg-[#F8FAFC] border border-[#E2E8F0] text-[#64748B]"
                         >
                           {svc}
                         </span>
@@ -279,7 +279,7 @@ function Discover() {
                 <div className="p-4 pt-0">
                   <Link
                     to={`/business/${biz.id}`}
-                    className="block w-full text-center py-2 px-3 bg-[#2563EB] hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors"
+                    className="block w-full min-h-[44px] flex items-center justify-center text-center py-2.5 px-3 bg-[#2563EB] hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors"
                   >
                     View Business
                   </Link>

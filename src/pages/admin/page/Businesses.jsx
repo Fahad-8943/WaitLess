@@ -191,10 +191,10 @@ function Businesses() {
                     </span>
                   </div>
 
-                  <div className="text-[11px] text-[#64748B] space-y-0.5">
-                    <div>Owner: <strong className="text-[#111827]">{biz.owner}</strong> &bull; {biz.category}</div>
+                  <div className="text-xs text-[#64748B] space-y-0.5">
+                    <div>Owner: <strong className="text-[#111827]">{biz.owner}</strong> • {biz.category}</div>
                     <div>Location: {biz.location}</div>
-                    <div>Registered: {biz.registrationDate} &bull; Rating: {biz.rating}</div>
+                    <div>Registered: {biz.registrationDate} • Rating: {biz.rating}</div>
                   </div>
 
                   <div className="pt-2 flex items-center gap-2">

@@ -220,12 +220,12 @@ function Dashboard() {
                   >
                     <div>
                       <strong className="text-[#111827] block">{b.customer}</strong>
-                      <span className="text-[#64748B] text-[11px] block mt-0.5">
-                        {b.service} &bull; {b.time}
+                      <span className="text-[#64748B] text-xs block mt-0.5">
+                        {b.service} • {b.time}
                       </span>
                     </div>
                     <span
-                      className={`px-2 py-0.5 rounded text-[11px] font-semibold ${
+                      className={`px-2 py-0.5 rounded text-xs font-semibold ${
                         b.status === "In Progress"
                           ? "bg-blue-50 text-blue-700 border border-blue-200"
                           : "bg-slate-100 text-[#64748B] border border-slate-200"

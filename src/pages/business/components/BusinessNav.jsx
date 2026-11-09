@@ -23,7 +23,7 @@ function BusinessNav() {
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2.5 focus:outline-none" aria-label="WaitLess Home">
               <img src={logo} alt="WaitLess Logo" className="h-8 w-auto object-contain" />
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-indigo-900 text-cyan-300 border border-indigo-700/50">
+              <span className="text-xs font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-indigo-900 text-cyan-300 border border-indigo-700/50">
                 Business Portal
               </span>
             </Link>
@@ -64,7 +64,7 @@ function BusinessNav() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="p-2 rounded-lg text-indigo-200 hover:text-white hover:bg-white/10 focus:outline-none"
+              className="min-h-[44px] min-w-[44px] p-2.5 rounded-lg text-indigo-200 hover:text-white hover:bg-white/10 focus:outline-none flex items-center justify-center transition-colors"
               aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,7 +88,7 @@ function BusinessNav() {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-xs font-semibold ${
+                  className={`block px-3 py-2.5 min-h-[44px] flex items-center rounded-lg text-xs font-semibold ${
                     isActive
                       ? "bg-white/15 text-white"
                       : "text-indigo-200 hover:text-white hover:bg-white/10"

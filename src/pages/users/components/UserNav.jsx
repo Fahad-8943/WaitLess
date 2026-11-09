@@ -62,7 +62,7 @@ function UserNav() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="p-2 rounded-lg text-white hover:bg-white/10 focus:outline-none"
+              className="min-h-[44px] min-w-[44px] p-2.5 rounded-lg text-white hover:bg-white/10 focus:outline-none flex items-center justify-center transition-colors"
               aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,7 +86,7 @@ function UserNav() {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-xs font-semibold ${
+                  className={`block px-3 py-2.5 min-h-[44px] flex items-center rounded-lg text-xs font-semibold ${
                     isActive
                       ? "bg-white/15 text-white"
                       : "text-indigo-100 hover:text-white hover:bg-white/10"
@@ -100,7 +100,7 @@ function UserNav() {
               <Link
                 to="/discover"
                 onClick={() => setIsOpen(false)}
-                className="block text-center px-3 py-2 rounded-lg text-xs font-semibold bg-white text-[#111827]"
+                className="block text-center px-3 py-2.5 min-h-[44px] flex items-center justify-center rounded-lg text-xs font-semibold bg-white text-[#111827]"
               >
                 Find a Service
               </Link>

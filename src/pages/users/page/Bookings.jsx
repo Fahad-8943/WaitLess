@@ -203,11 +203,11 @@ function Bookings() {
                     <span className="text-[#64748B] block mb-1">Selected Services:</span>
                     <div className="space-y-1">
                       <div className="flex justify-between text-[#111827]">
-                        <span>&bull; Haircut (30 min)</span>
+                        <span>• Haircut (30 min)</span>
                         <span>₹300</span>
                       </div>
                       <div className="flex justify-between text-[#111827]">
-                        <span>&bull; Beard Trim &amp; Sculpt (15 min)</span>
+                        <span>• Beard Trim &amp; Sculpt (15 min)</span>
                         <span>₹150</span>
                       </div>
                     </div>
@@ -231,7 +231,7 @@ function Bookings() {
 
                 <button
                   type="button"
-                  className="w-full py-2.5 px-4 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold rounded-lg text-xs transition-colors shadow-2xs"
+                  className="w-full min-h-[44px] flex items-center justify-center py-2.5 px-4 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold rounded-lg text-xs transition-colors shadow-2xs"
                 >
                   Confirm Booking Slot
                 </button>
@@ -253,10 +253,10 @@ function Bookings() {
                 >
                   <div className="space-y-1">
                     <strong className="text-sm text-[#111827] block">{b.business}</strong>
-                    <span className="text-[#64748B] block">{b.services} &bull; {b.duration}</span>
-                    <span className="text-[#111827] font-semibold block">{b.date} &bull; {b.time}</span>
+                    <span className="text-[#64748B] block">{b.services} • {b.duration}</span>
+                    <span className="text-[#111827] font-semibold block">{b.date} • {b.time}</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
+                  <span className="px-2 py-0.5 rounded text-xs font-semibold bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
                     {b.status}
                   </span>
                 </div>
@@ -271,9 +271,9 @@ function Bookings() {
                 <div key={pb.id} className="p-3.5 flex items-center justify-between text-xs">
                   <div>
                     <strong className="text-[#111827]">{pb.business}</strong>
-                    <span className="text-[#64748B] ml-2">{pb.services} &bull; {pb.date}</span>
+                    <span className="text-[#64748B] ml-2">{pb.services} • {pb.date}</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <span className="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                     {pb.status}
                   </span>
                 </div>

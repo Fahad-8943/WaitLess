@@ -11,7 +11,7 @@ function BusinessDetails() {
     <div className="min-h-screen bg-[#F8FAFC] text-[#111827] flex flex-col font-sans">
       <Header />
 
-      <main className="flex-grow pt-24 pb-16">
+      <main className="flex-grow pt-24 pb-28 lg:pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6">
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 text-xs text-[#64748B]">
@@ -33,7 +33,7 @@ function BusinessDetails() {
                 <span className="text-xs font-semibold text-[#111827] mt-3 block">
                   {business.name}
                 </span>
-                <span className="text-[11px] text-[#64748B] mt-0.5">
+                <span className="text-xs text-[#64748B] mt-0.5">
                   {business.category}
                 </span>
               </div>
@@ -54,9 +54,9 @@ function BusinessDetails() {
                     ★ {business.rating}
                   </span>
                   <span>({business.reviewCount} reviews)</span>
-                  <span>&bull;</span>
+                  <span>•</span>
                   <span>{business.location}</span>
-                  <span>&bull;</span>
+                  <span>•</span>
                   <span className="text-emerald-700 font-medium">
                     {business.openingHours}
                   </span>
@@ -96,7 +96,7 @@ function BusinessDetails() {
                         <p className="text-xs text-[#64748B] mt-0.5">
                           {svc.desc}
                         </p>
-                        <span className="inline-block mt-1 text-[11px] font-medium text-[#2563EB]">
+                        <span className="inline-block mt-1 text-xs font-medium text-[#2563EB]">
                           Duration: ~{svc.duration}
                         </span>
                       </div>
@@ -148,14 +148,14 @@ function BusinessDetails() {
                   <h2 className="text-base font-bold text-[#111827]">
                     Current Queue
                   </h2>
-                  <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <span className="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                     Active
                   </span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
-                    <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider block">
+                    <span className="text-xs font-bold text-[#64748B] uppercase tracking-wider block">
                       Current Token
                     </span>
                     <strong className="text-xl font-black text-[#111827] mt-0.5 block">
@@ -164,7 +164,7 @@ function BusinessDetails() {
                   </div>
 
                   <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
-                    <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider block">
+                    <span className="text-xs font-bold text-[#64748B] uppercase tracking-wider block">
                       People Waiting
                     </span>
                     <strong className="text-xl font-black text-[#111827] mt-0.5 block">
@@ -186,23 +186,40 @@ function BusinessDetails() {
                 <div className="space-y-2 pt-2">
                   <Link
                     to={`/login?redirect=${encodeURIComponent(`/user/queue?business=${businessId}`)}`}
-                    className="block w-full py-2.5 px-4 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold text-center rounded-lg text-xs transition-colors shadow-2xs"
+                    className="hidden lg:flex items-center justify-center w-full min-h-[44px] py-2.5 px-4 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold text-center rounded-lg text-xs transition-colors shadow-2xs"
                   >
                     Join Queue
                   </Link>
                   <Link
                     to={`/login?redirect=${encodeURIComponent(`/user/bookings?business=${businessId}`)}`}
-                    className="block w-full py-2.5 px-4 bg-white hover:bg-slate-50 border border-[#E2E8F0] text-[#111827] font-semibold text-center rounded-lg text-xs transition-colors"
+                    className="flex items-center justify-center w-full min-h-[44px] py-2.5 px-4 bg-white hover:bg-slate-50 border border-[#E2E8F0] text-[#111827] font-semibold text-center rounded-lg text-xs transition-colors"
                   >
                     Book a Slot
                   </Link>
                 </div>
 
-                <p className="text-[11px] text-[#64748B] text-center pt-2">
+                <p className="text-xs text-[#64748B] text-center pt-2">
                   A 10-minute grace period applies once your token is called.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+        {/* Mobile-Only Sticky Bottom Booking Bar */}
+        <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-[#E2E8F0] px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] shadow-lg z-20">
+          <div className="mx-auto flex items-center justify-between gap-3 max-w-md">
+            <div className="min-w-0">
+              <span className="text-xs text-[#64748B] block truncate">Estimated Wait</span>
+              <strong className="text-sm font-bold text-[#2563EB] block truncate">
+                {business.currentQueue.estimatedWaitingTime || "Not available"}
+              </strong>
+            </div>
+            <Link
+              to={`/login?redirect=${encodeURIComponent(`/user/queue?business=${businessId}`)}`}
+              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold text-xs rounded-lg transition-colors shadow-2xs whitespace-nowrap"
+            >
+              Join Queue
+            </Link>
           </div>
         </div>
       </main>

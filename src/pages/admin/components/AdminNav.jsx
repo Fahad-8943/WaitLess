@@ -22,7 +22,7 @@ function AdminNav() {
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2.5 focus:outline-none" aria-label="WaitLess Home">
               <img src={logo} alt="WaitLess Logo" className="h-8 w-auto object-contain" />
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-slate-800 text-amber-400 border border-slate-700">
+              <span className="text-xs font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-slate-800 text-amber-400 border border-slate-700">
                 Platform Admin
               </span>
             </Link>
@@ -65,7 +65,7 @@ function AdminNav() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none"
+              className="min-h-[44px] min-w-[44px] p-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none flex items-center justify-center transition-colors"
               aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,7 +91,7 @@ function AdminNav() {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-xs font-semibold ${
+                  className={`block px-3 py-2.5 min-h-[44px] flex items-center rounded-lg text-xs font-semibold ${
                     isActive
                       ? "bg-slate-800 text-white"
                       : "text-slate-300 hover:text-white hover:bg-slate-800/60"

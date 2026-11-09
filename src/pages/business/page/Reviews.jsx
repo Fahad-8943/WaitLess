@@ -53,7 +53,7 @@ function Reviews() {
             </div>
             <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
               <span className="font-bold text-amber-600">★ 4.9 Average</span>
-              <span>&bull;</span>
+              <span>•</span>
               <span>{reviewsList.length} reviews</span>
             </div>
           </div>

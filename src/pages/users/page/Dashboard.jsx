@@ -279,10 +279,10 @@ function Dashboard() {
                         {act.business}
                       </strong>
                       <span className="text-[#64748B] mt-0.5 block">
-                        {act.service} &bull; {act.date}
+                        {act.service} • {act.date}
                       </span>
                     </div>
-                    <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span className="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                       {act.status}
                     </span>
                   </div>
@@ -310,7 +310,7 @@ function Dashboard() {
                     <div>
                       <strong className="text-[#111827] block">{rec.name}</strong>
                       <span className="text-[#64748B] mt-0.5 block">
-                        {rec.category} &bull; ★ {rec.rating}
+                        {rec.category} • ★ {rec.rating}
                       </span>
                     </div>
                     <div className="text-right">
@@ -319,7 +319,7 @@ function Dashboard() {
                       </span>
                       <Link
                         to={`/business/${rec.id}`}
-                        className="text-[11px] text-[#64748B] hover:text-[#111827] hover:underline"
+                        className="text-xs text-[#64748B] hover:text-[#111827] hover:underline"
                       >
                         View
                       </Link>

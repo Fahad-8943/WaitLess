@@ -54,13 +54,13 @@ function HeroSection() {
               {/* Product Card Header */}
               <div className="flex items-start justify-between pb-4 border-b border-[#E2E8F0]">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#3730A3]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#3730A3]">
                     Live Queue Example
                   </span>
                   <h2 className="text-base font-bold text-[#111827] mt-0.5">
                     Crown &amp; Blade Studio
                   </h2>
-                  <p className="text-xs text-[#64748B]">Barbers &bull; Downtown</p>
+                  <p className="text-xs text-[#64748B]">Barbers • Downtown</p>
                 </div>
                 <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                   Open Now
@@ -70,23 +70,23 @@ function HeroSection() {
               {/* Tokens Preview */}
               <div className="grid grid-cols-2 gap-3 mt-4">
                 <div className="p-3.5 bg-white border border-[#2563EB]/30 rounded-xl">
-                  <span className="text-[10px] font-bold text-[#2563EB] uppercase tracking-wider block">
+                  <span className="text-xs font-bold text-[#2563EB] uppercase tracking-wider block">
                     Your Token
                   </span>
                   <span className="text-2xl font-black text-[#2563EB] mt-1 block">
                     #A-18
                   </span>
-                  <span className="text-[11px] text-[#64748B]">In Queue</span>
+                  <span className="text-xs text-[#64748B]">In Queue</span>
                 </div>
 
                 <div className="p-3.5 bg-white border border-[#E2E8F0] rounded-xl">
-                  <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider block">
+                  <span className="text-xs font-bold text-[#64748B] uppercase tracking-wider block">
                     Now Serving
                   </span>
                   <span className="text-2xl font-black text-[#111827] mt-1 block">
                     #A-14
                   </span>
-                  <span className="text-[11px] text-[#64748B]">Chair 1</span>
+                  <span className="text-xs text-[#64748B]">Chair 1</span>
                 </div>
               </div>
 
