@@ -8,9 +8,9 @@ function Footer() {
   const homeSection = (id) => pathname === "/" ? `#${id}` : `/#${id}`;
 
   return (
-    <footer className="bg-[#111827] text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <footer className="bg-[#07090e] text-slate-400 pt-16 pb-12 border-t border-slate-800/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800/80">
           {/* WaitLess Branding & Short Description */}
           <div className="lg:col-span-2">
             <Link to="/" aria-label="WaitLess Home">
@@ -27,14 +27,14 @@ function Footer() {
 
           {/* Platform Links */}
           <div>
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
+            <h3 className="text-xs font-semibold text-slate-200 uppercase tracking-wider">
               Platform
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/discover"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Discover
                 </Link>
@@ -42,7 +42,7 @@ function Footer() {
               <li>
                 <a
                   href={homeSection("how-it-works")}
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   How It Works
                 </a>
@@ -50,7 +50,7 @@ function Footer() {
               <li>
                 <Link
                   to="/login"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Login
                 </Link>
@@ -58,7 +58,7 @@ function Footer() {
               <li>
                 <Link
                   to="/register"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Get Started
                 </Link>
@@ -68,14 +68,14 @@ function Footer() {
 
           {/* Business Links */}
           <div>
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
+            <h3 className="text-xs font-semibold text-slate-200 uppercase tracking-wider">
               Business
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/business-register"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Register Your Business
                 </Link>
@@ -83,7 +83,7 @@ function Footer() {
               <li>
                 <Link
                   to="/business-register"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Business Dashboard
                 </Link>
@@ -91,7 +91,7 @@ function Footer() {
               <li>
                 <a
                   href={homeSection("for-businesses")}
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   For Businesses
                 </a>
@@ -101,14 +101,14 @@ function Footer() {
 
           {/* Support Links */}
           <div>
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
+            <h3 className="text-xs font-semibold text-slate-200 uppercase tracking-wider">
               Support
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <a
                   href="mailto:support@waitless.app"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Help Center
                 </a>
@@ -116,7 +116,7 @@ function Footer() {
               <li>
                 <a
                   href="mailto:privacy@waitless.app?subject=Privacy%20Policy"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Privacy Policy
                 </a>
@@ -124,7 +124,7 @@ function Footer() {
               <li>
                 <a
                   href="mailto:support@waitless.app?subject=Terms%20of%20Service"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-indigo-400 transition-colors"
                 >
                   Terms of Service
                 </a>

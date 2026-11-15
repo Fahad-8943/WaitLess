@@ -1,10 +1,18 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import logo from "../../../../src/assets/logo.png";
+import { useAuth } from "../../../context/AuthContext";
 
 function UserNav() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+    navigate("/login");
+  };
 
   const navItems = [
     { label: "Dashboard", path: "/user/dashboard" },
@@ -14,13 +22,15 @@ function UserNav() {
     { label: "Profile", path: "/user/profile" },
   ];
 
+  const userInitial = user?.name ? user.name.charAt(0).toUpperCase() : "U";
+
   return (
-    <header className="bg-[#3730A3] border-b border-indigo-900 sticky top-0 z-30 shadow-xs">
+    <header className="bg-[#0b0f19] border-b border-slate-800/80 sticky top-0 z-30 shadow-xs">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo & Main Nav */}
           <div className="flex items-center gap-8">
-            <Link to="/" className="flex items-center gap-2.5 focus:outline-none" aria-label="WaitLess Home">
+            <Link to="/" className="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md" aria-label="WaitLess Home">
               <img src={logo} alt="WaitLess Logo" className="h-8 w-auto object-contain" />
             </Link>
 
@@ -33,8 +43,8 @@ function UserNav() {
                     to={item.path}
                     className={`px-3 py-1.5 rounded-lg transition-colors ${
                       isActive
-                        ? "bg-white/15 text-white font-bold"
-                        : "text-indigo-100 hover:text-white hover:bg-white/10"
+                        ? "bg-indigo-600/20 text-indigo-400 font-semibold border border-indigo-500/30"
+                        : "text-slate-300 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     {item.label}
@@ -48,13 +58,19 @@ function UserNav() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               to="/discover"
-              className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-[#111827] hover:bg-indigo-50 transition-colors shadow-2xs"
+              className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700/80 transition-colors shadow-2xs"
             >
               Find a Service
             </Link>
-            <div className="h-7 w-7 rounded-full bg-indigo-700 text-white flex items-center justify-center font-bold text-xs ring-1 ring-white/30">
-              F
+            <div className="h-7 w-7 rounded-full bg-gradient-to-br from-indigo-600 to-indigo-800 text-white flex items-center justify-center font-bold text-xs ring-1 ring-indigo-400/30">
+              {userInitial}
             </div>
+            <button
+              onClick={handleLogout}
+              className="text-xs text-slate-400 hover:text-white px-2 py-1 rounded transition-colors cursor-pointer"
+            >
+              Sign out
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -62,7 +78,7 @@ function UserNav() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="min-h-[44px] min-w-[44px] p-2.5 rounded-lg text-white hover:bg-white/10 focus:outline-none flex items-center justify-center transition-colors"
+              className="min-h-[44px] min-w-[44px] p-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center transition-colors"
               aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -78,7 +94,7 @@ function UserNav() {
 
         {/* Mobile menu dropdown */}
         {isOpen && (
-          <div className="md:hidden py-3 border-t border-indigo-700/60 space-y-1">
+          <div className="md:hidden py-3 border-t border-slate-800 space-y-1 bg-[#0d121f] -mx-4 px-4 sm:-mx-6 sm:px-6">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
@@ -88,22 +104,31 @@ function UserNav() {
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2.5 min-h-[44px] flex items-center rounded-lg text-xs font-semibold ${
                     isActive
-                      ? "bg-white/15 text-white"
-                      : "text-indigo-100 hover:text-white hover:bg-white/10"
+                      ? "bg-indigo-600/20 text-indigo-400 border border-indigo-500/30"
+                      : "text-slate-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {item.label}
                 </Link>
               );
             })}
-            <div className="pt-2">
+            <div className="pt-2 border-t border-slate-800 space-y-2">
               <Link
                 to="/discover"
                 onClick={() => setIsOpen(false)}
-                className="block text-center px-3 py-2.5 min-h-[44px] flex items-center justify-center rounded-lg text-xs font-semibold bg-white text-[#111827]"
+                className="block text-center px-3 py-2.5 min-h-[44px] flex items-center justify-center rounded-lg text-xs font-semibold bg-slate-800 text-slate-100 border border-slate-700"
               >
                 Find a Service
               </Link>
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  handleLogout();
+                }}
+                className="w-full text-left px-3 py-2.5 min-h-[44px] flex items-center rounded-lg text-xs font-semibold text-rose-400 hover:text-rose-300 hover:bg-white/5"
+              >
+                Sign out
+              </button>
             </div>
           </div>
         )}

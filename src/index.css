@@ -1,10 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-canvas-base: #07090e;
+  --color-canvas-surface: #0b0f19;
+  --color-canvas-card: #0d121f;
+  --color-canvas-elevated: #151d2e;
+
+  --color-border-subtle: #1e293b;
+  --color-border-bright: #334155;
+  --color-border-accent: rgba(99, 102, 241, 0.3);
+
+  --color-brand-primary: #4f46e5;
+  --color-brand-hover: #4338ca;
+  --color-brand-glow: #6366f1;
+  --color-brand-cyan: #06b6d4;
+
+  --color-status-active: #10b981;
+  --color-status-warning: #f59e0b;
+  --color-status-danger: #ef4444;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 :root {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #111827;
-  background-color: #F8FAFC;
+  font-family: var(--font-sans);
+  color: #f1f5f9;
+  background-color: #07090e;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -20,9 +42,9 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background-color: #F8FAFC;
-  color: #111827;
-  font-family: 'DM Sans', sans-serif;
+  background-color: #07090e;
+  color: #f1f5f9;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,16 +58,21 @@ button, a {
 }
 
 ::selection {
-  background-color: #DBEAFE;
-  color: #111827;
+  background-color: #4f46e5;
+  color: #ffffff;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Manrope', 'DM Sans', sans-serif;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 main {
   min-height: 75vh;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -56,3 +83,4 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+

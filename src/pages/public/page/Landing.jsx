@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#111827] flex flex-col font-sans selection:bg-blue-100 selection:text-[#2563EB]">
+    <div className="min-h-screen bg-[#07090E] text-slate-100 flex flex-col font-sans selection:bg-blue-500/30 selection:text-blue-200 antialiased">
       {/* Existing Header Reused */}
       <Header />
 

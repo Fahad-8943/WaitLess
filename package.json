@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "node --test tests/frontend-auth.test.mjs tests/frontend-customer.test.mjs tests/frontend-provider.test.mjs tests/frontend-admin.test.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

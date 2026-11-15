@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route, Navigate, Link, useLocation } from "react-router";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 // Public Pages
 import Landing from "./pages/public/page/Landing";
@@ -8,6 +9,7 @@ import Register from "./pages/public/page/Register";
 import BusinessRegister from "./pages/public/page/BusinessRegister";
 import Discover from "./pages/public/page/Discover";
 import PublicBusinessDetails from "./pages/public/page/BusinessDetails";
+import Unauthorized from "./pages/public/page/Unauthorized";
 
 // Customer Pages
 import UserDashboard from "./pages/users/page/Dashboard";
@@ -51,32 +53,161 @@ function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/business-register" element={<BusinessRegister />} />
+      <Route
+        path="/business-register"
+        element={
+          <ProtectedRoute allowedRoles={["customer", "provider", "admin"]}>
+            <BusinessRegister />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/discover" element={<Discover />} />
       <Route path="/business/:businessId" element={<PublicBusinessDetails />} />
+      <Route path="/unauthorized" element={<Unauthorized />} />
 
-      {/* Customer Routes */}
-      <Route path="/user/dashboard" element={<UserDashboard />} />
-      <Route path="/user/bookings" element={<UserBookings />} />
-      <Route path="/user/queue" element={<UserQueue />} />
-      <Route path="/user/history" element={<UserHistory />} />
-      <Route path="/user/profile" element={<UserProfile />} />
+      {/* Customer Routes (Customer, Provider, Admin) */}
+      <Route
+        path="/user/dashboard"
+        element={
+          <ProtectedRoute allowedRoles={["customer", "provider", "admin"]}>
+            <UserDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/user/bookings"
+        element={
+          <ProtectedRoute allowedRoles={["customer", "provider", "admin"]}>
+            <UserBookings />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/user/queue"
+        element={
+          <ProtectedRoute allowedRoles={["customer", "provider", "admin"]}>
+            <UserQueue />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/user/history"
+        element={
+          <ProtectedRoute allowedRoles={["customer", "provider", "admin"]}>
+            <UserHistory />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/user/profile"
+        element={
+          <ProtectedRoute allowedRoles={["customer", "provider", "admin"]}>
+            <UserProfile />
+          </ProtectedRoute>
+        }
+      />
 
-      {/* Business Owner Routes */}
-      <Route path="/business/dashboard" element={<BusinessDashboard />} />
-      <Route path="/business/profile" element={<BusinessProfile />} />
-      <Route path="/business/services" element={<BusinessServices />} />
-      <Route path="/business/bookings" element={<BusinessBookings />} />
-      <Route path="/business/queue" element={<BusinessQueue />} />
-      <Route path="/business/reviews" element={<BusinessReviews />} />
+      {/* Business Owner Routes (Provider and Admin only; Customers forbidden) */}
+      <Route
+        path="/business/dashboard"
+        element={
+          <ProtectedRoute allowedRoles={["provider", "admin"]}>
+            <BusinessDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/business/profile"
+        element={
+          <ProtectedRoute allowedRoles={["provider", "admin"]}>
+            <BusinessProfile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/business/services"
+        element={
+          <ProtectedRoute allowedRoles={["provider", "admin"]}>
+            <BusinessServices />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/business/bookings"
+        element={
+          <ProtectedRoute allowedRoles={["provider", "admin"]}>
+            <BusinessBookings />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/business/queue"
+        element={
+          <ProtectedRoute allowedRoles={["provider", "admin"]}>
+            <BusinessQueue />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/business/reviews"
+        element={
+          <ProtectedRoute allowedRoles={["provider", "admin"]}>
+            <BusinessReviews />
+          </ProtectedRoute>
+        }
+      />
 
-      {/* Platform Admin Routes */}
-      <Route path="/admin/dashboard" element={<AdminDashboard />} />
-      <Route path="/admin/businesses" element={<AdminBusinesses />} />
-      <Route path="/admin/businesses/:businessId" element={<AdminBusinessDetails />} />
-      <Route path="/admin/users" element={<AdminUsers />} />
-      <Route path="/admin/reviews" element={<AdminReviews />} />
-      <Route path="/admin/settings" element={<AdminSettings />} />
+      {/* Platform Admin Routes (Admin only; Customers and Providers forbidden) */}
+      <Route
+        path="/admin/dashboard"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/businesses"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminBusinesses />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/businesses/:businessId"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminBusinessDetails />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/users"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminUsers />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/reviews"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminReviews />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/settings"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminSettings />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Convenience Navigation Redirects */}
       <Route path="/business" element={<Navigate to="/business/dashboard" replace />} />
       <Route path="/user" element={<Navigate to="/user/dashboard" replace />} />
       <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
